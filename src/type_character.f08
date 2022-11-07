@@ -42,6 +42,7 @@
 submodule (libcndmem) type_character
 implicit none
 contains
+    include 'type_character/cnddel_character.f08'
 end submodule type_character
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
