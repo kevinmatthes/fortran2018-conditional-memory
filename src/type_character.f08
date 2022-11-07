@@ -20,7 +20,7 @@
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!
-!> \file lib.f08
+!> \file type_character.f08
 !!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -32,40 +32,18 @@
 !> \note        See `LICENSE' for full license.
 !>              See `README.md' for project details.
 !>
-!> \brief   Conditional memory management for intrinsic types.
+!> \brief   The submodule defining procedures for the `character` type.
 !>
-!> This library provides procedures for conditional allocation and deallocation
-!> of allocatable objects of Fortran intrinsic types.
-!>
-!> As a language reference, \cite chivers.sleightholme:fortran:2018,
-!> \cite kuhme.witschital:fortran:1991, and
-!> \cite metcalf.reid.cohen:fortran:2018 were consulted.
+!> This submodule contains the procedures associated with the `character`
+!> intrinsic type.
 !!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-module libcndmem
+submodule (libcndmem) type_character
 implicit none
-private
-    !> This library's version.
-    character (*), parameter, public    :: library_version = 'v0.0.0'
-
-    public  :: cndall
-    public  :: cnddel
-
-    interface cndall
-        pure module subroutine cndall_character (tgt, src)
-        implicit none
-            character (*), intent (in)                  :: src
-            character (:), allocatable, intent (inout)  :: tgt
-        end subroutine cndall_character
-    end interface cndall
-
-    interface cnddel
-        pure module subroutine cnddel_character (tgt)
-        implicit none
-            character (:), allocatable, intent (inout)  :: tgt
-        end subroutine cnddel_character
-    end interface cnddel
-end module libcndmem
+contains
+    include 'type_character/cndall_character.f08'
+    include 'type_character/cnddel_character.f08'
+end submodule type_character
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

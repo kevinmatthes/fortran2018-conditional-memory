@@ -34,6 +34,7 @@
 alias a         := all
 alias b         := library
 alias build     := library
+alias clr       := clear
 alias d         := doxygen
 alias l         := library
 alias ver       := bump
@@ -58,12 +59,20 @@ f18-lib := f18 + ' ' + lib + ' ' + flags
 @default: all
 
 # Execute all configured recipes.
-@all: doxygen library
+@all: clear doxygen library
 
 # Increment the version numbers.
 @bump part:
     bump2version {{part}}
     scriv collect
+
+# Compile the procedures for the `character` type.
+@character: interfaces
+    just compile src/type_character.f08
+
+# Remove build artifacts.
+@clear:
+    git clean -dfx
 
 # Compile the given source file and add it to the library.
 @compile source_file:
@@ -77,8 +86,11 @@ f18-lib := f18 + ' ' + lib + ' ' + flags
     cd latex/ && latexmk -f -r ../.latexmkrc --silent refman
     cp latex/refman.pdf doxygen.pdf
 
-# Compile the target library.
-@library:
+# Create the library interfaces.
+@interfaces:
     just compile src/lib.f08
+
+# Compile the target library.
+@library: character
 
 ################################################################################

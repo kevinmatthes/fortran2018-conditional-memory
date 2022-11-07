@@ -20,7 +20,7 @@
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!
-!> \file lib.f08
+!> \file cnddel_character.f08
 !!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -32,40 +32,22 @@
 !> \note        See `LICENSE' for full license.
 !>              See `README.md' for project details.
 !>
-!> \brief   Conditional memory management for intrinsic types.
+!> \brief   Deallocate the given allocatable object if it is allocated.
+!> \param   tgt The object to deallocate.
 !>
-!> This library provides procedures for conditional allocation and deallocation
-!> of allocatable objects of Fortran intrinsic types.
-!>
-!> As a language reference, \cite chivers.sleightholme:fortran:2018,
-!> \cite kuhme.witschital:fortran:1991, and
-!> \cite metcalf.reid.cohen:fortran:2018 were consulted.
+!> This subroutine will **c**o**nd**itionally **de**a**l**locate the given
+!> allocatable object.  If it is allocated, it will be deallocated.
 !!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-module libcndmem
+pure subroutine cnddel_character (tgt)
 implicit none
-private
-    !> This library's version.
-    character (*), parameter, public    :: library_version = 'v0.0.0'
+    character (:), allocatable, intent (inout)  :: tgt
+    intrinsic                                   :: allocated
 
-    public  :: cndall
-    public  :: cnddel
-
-    interface cndall
-        pure module subroutine cndall_character (tgt, src)
-        implicit none
-            character (*), intent (in)                  :: src
-            character (:), allocatable, intent (inout)  :: tgt
-        end subroutine cndall_character
-    end interface cndall
-
-    interface cnddel
-        pure module subroutine cnddel_character (tgt)
-        implicit none
-            character (:), allocatable, intent (inout)  :: tgt
-        end subroutine cnddel_character
-    end interface cnddel
-end module libcndmem
+    if (allocated (tgt)) then
+        deallocate (tgt)
+    end if
+end subroutine cnddel_character
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
