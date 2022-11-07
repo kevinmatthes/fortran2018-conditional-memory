@@ -36,7 +36,7 @@
 !> \param   tgt The allocatable object to receive the value.
 !> \param   src The object to assign.
 !>
-!> This subroutine will **c**o**nd**itionally **all**ocate the given allocatable
+!> This subroutine will `C`o`ND`itionally `ALL`ocate the given allocatable
 !> object and assign the other object to it.  If the given allocatable object is
 !> not already allocated, the appropriate amount of memory will be allocated.
 !> If it should already be allocated, the memory will be reallocated.
