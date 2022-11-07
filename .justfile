@@ -31,13 +31,54 @@
 ################################################################################
 
 # Synonyms for the configured recipes.
-alias ver   := bump
+alias a         := all
+alias b         := library
+alias build     := library
+alias d         := doxygen
+alias l         := library
+alias ver       := bump
+alias version   := bump
 
 
+
+# Compiler flags.
+f18     := '-std=f2018'
+flags   := '-Wall -Werror -Wextra -Wpedantic'
+lib     := '-c -fPIC'
+
+# Targets.
+library := 'libcndmem.a'
+
+# Settings for the supported language modes.
+f18-lib := f18 + ' ' + lib + ' ' + flags
+
+
+
+# The default recipe to execute.
+@default: all
+
+# Execute all configured recipes.
+@all: doxygen library
 
 # Increment the version numbers.
 @bump part:
     bump2version {{part}}
     scriv collect
+
+# Compile the given source file and add it to the library.
+@compile source_file:
+    gfortran {{f18-lib}} {{source_file}}
+    ar rsv {{library}} *.o
+    rm -rf *.o
+
+# Create the Doxygen documentation for this project.
+@doxygen:
+    doxygen doxygen.cfg
+    cd latex/ && latexmk -f -r ../.latexmkrc --silent refman
+    cp latex/refman.pdf doxygen.pdf
+
+# Compile the target library.
+@library:
+    just compile src/lib.f08
 
 ################################################################################
