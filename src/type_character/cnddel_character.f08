@@ -35,7 +35,8 @@
 !> \brief   Deallocate the given allocatable object if it is allocated.
 !> \param   tgt The object to deallocate.
 !>
-!> If the given allocatable object is allocated, it will be deallocated.
+!> This subroutine will **c**o**nd**itionally **de**a**l**locate the given
+!> allocatable object.  If it is allocated, it will be deallocated.
 !!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
