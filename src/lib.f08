@@ -48,6 +48,21 @@ implicit none
 private
     !> This library's version.
     character (*), parameter, public    :: library_version = 'v0.0.0'
+
+    interface cndall
+        pure module subroutine cndall_character (tgt, src)
+        implicit none
+            character (*), intent (in)                  :: src
+            character (:), allocatable, intent (inout)  :: tgt
+        end subroutine cndall_character
+    end interface cndall
+
+    interface cnddel
+        pure module subroutine cnddel_character (tgt)
+        implicit none
+            character (:), allocatable, intent (inout)  :: tgt
+        end subroutine cnddel_character
+    end interface cnddel
 end module libcndmem
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
