@@ -49,6 +49,9 @@ private
     !> This library's version.
     character (*), parameter, public    :: library_version = 'v0.0.0'
 
+    public  :: cndall
+    public  :: cnddel
+
     interface cndall
         pure module subroutine cndall_character (tgt, src)
         implicit none
