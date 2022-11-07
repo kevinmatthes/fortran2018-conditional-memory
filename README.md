@@ -65,6 +65,7 @@ version is as follows:
 | bump2version      | Python CLI    | automatic version increment           |
 | Doxygen           | application   | source code documentation             |
 | GFortran          | application   | Fortran 2018 compiler                 |
+| Git               | application   | build artifact removal                |
 | Just              | Rust binary   | execution of the build instructions   |
 | Latexmk           | application   | LaTeX compilation of Doxygen manual   |
 | Scriv             | Python CLI    | changelog management                  |
@@ -91,5 +92,10 @@ project employs **Latexmk** as LaTeX build manager for the manual finalisation.
 In order to simplify the maintenance, **bump2version** as well as **Scriv** are
 used to automate the release generation.  Scriv will compile the changelog on
 release after all version numbers were incremented by bump2version.
+
+Build artifacts are not going to be committed.  This is ensured by the
+`.gitignore` this repository contains.  It furthermore controls which files are
+going to be removed by `git clean`.  Thus, it is the simplest solution to employ
+**Git** for the removal of build artifacts.
 
 <!----------------------------------------------------------------------------->
