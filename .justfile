@@ -43,15 +43,24 @@ alias version   := bump
 
 
 # Compiler flags.
+exe     := '-fPIE'
 f18     := '-std=f2018'
 flags   := '-Wall -Werror -Wextra -Wpedantic'
 lib     := '-c -fPIC'
 
+# Linker flags.
+lflags  := '-L. -lf18cndmem'
+
+# Settings for the supported language modes.
+f18-exe := f18 + ' ' + exe + ' ' + flags
+f18-lib := f18 + ' ' + lib + ' ' + flags
+lnk-f18 := '-I. ' + lflags
+
 # Targets.
 library := 'libcndmem.a'
 
-# Settings for the supported language modes.
-f18-lib := f18 + ' ' + lib + ' ' + flags
+# Valgrind settings.
+vflags  := '--leak-check=full --redzone-size=512 --show-leak-kinds=all'
 
 
 
@@ -80,6 +89,10 @@ f18-lib := f18 + ' ' + lib + ' ' + flags
     ar rsv {{library}} *.o
     rm -rf *.o
 
+# Create the required directories.
+@directories:
+    mkdir -p target/
+
 # Create the Doxygen documentation for this project.
 @doxygen:
     doxygen doxygen.cfg
@@ -92,5 +105,15 @@ f18-lib := f18 + ' ' + lib + ' ' + flags
 
 # Compile the target library.
 @library: character
+
+# Compile and run a single unit test.
+@test name: directories library
+    gfortran {{f18-exe}} tests/test_{{name}}.f08 -o \
+        target/test_{{name}} {{lnk-f18}}
+    valgrind {{vflags}} target/test_{{name}}
+
+# Analyse the memory management of the unit tests.
+@valgrind:
+    just test character
 
 ################################################################################
