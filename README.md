@@ -160,8 +160,18 @@ just d
 just doxygen
 ```
 
+The correctness of this library is ensured by a set of unit tests.  They are
+furthermore analysed for their memory management by Valgrind.  By calling for
+the Valgrind analysis, the unit tests are executed implicitly.  This can be
+done with one of the following commands.
+
+```bash
+just v
+just valgrind
+```
+
 If the compilation of both the library and its documentation is wished, the
-following instructions can be executed.
+following instructions can be executed.  This will also run all unit tests.
 
 ```bash
 just
