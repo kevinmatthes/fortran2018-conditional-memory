@@ -37,6 +37,7 @@ alias build     := library
 alias clr       := clear
 alias d         := doxygen
 alias l         := library
+alias v         := valgrind
 alias ver       := bump
 alias version   := bump
 
@@ -68,7 +69,7 @@ vflags  := '--leak-check=full --redzone-size=512 --show-leak-kinds=all'
 @default: all
 
 # Execute all configured recipes.
-@all: clear doxygen library
+@all: clear doxygen valgrind
 
 # Increment the version numbers.
 @bump part:
