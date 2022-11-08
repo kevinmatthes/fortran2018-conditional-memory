@@ -120,6 +120,18 @@ are supported:
 
 * `character` (default)
 
+Fortran 2018 has automatic reallocation features which allow for a convenient
+and comprehensive coding style.  Under certain circumstances, it might not be
+obvious if an allocatable object is already allocated such that the automatic
+reallocation on intrinsic assignment can be processed.  Then, it need to be
+tested whether there is already a memory region allocated for the respective
+object.  If not so, an according amount of memory needs to be allocated before
+the assignment can be performed.  This library provides a counterpart to the
+conditional deallocation, named `cndall`, to check whether some memory was
+already allocated and to assign the intended object to the target object.  The
+name `cndall` is an abbreviation of "**C**o**nd**itional **All**ocation".  At
+the moment, the following types are supported:
+
 * `character` (default)
 
 ## Build
