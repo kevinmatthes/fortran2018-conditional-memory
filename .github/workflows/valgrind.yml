@@ -49,17 +49,15 @@ jobs:
       - name: dependencies
         run: sudo apt-get install valgrind -y
 
-      - run: git --version
-      - run: gfortran --version
-      - run: valgrind --version
-      #- name: checkout
-        #uses: actions/checkout@v3.1.0
-        #with:
-          #persist-credentials: false
+      - name: just
+        uses: extractions/setup-just@v1.5.0
 
-      #- name: cffconvert
-        #uses: citation-file-format/cffconvert-github-action@2.0.0
-        #with:
-          #args: --validate
+      - name: checkout
+        uses: actions/checkout@v3.1.0
+        with:
+          persist-credentials: false
+
+      - name: valgrind
+        run: just v
 
 ################################################################################
