@@ -79,20 +79,16 @@ implicit none
 
     if (.not. allocated (object)) then
         error stop error_not_allocated
-    else
-        if (object /= constant) then
-            error stop error_wrong_value
-        end if
+    else if (object /= constant) then
+        error stop error_wrong_value
     end if
 
     call cndall (object, hello)
 
     if (.not. allocated (object)) then
         error stop error_not_allocated
-    else
-        if (object // world /= hello // world) then
-            error stop error_wrong_value
-        end if
+    else if (object // world /= hello // world) then
+        error stop error_wrong_value
     end if
 
     if (.not. allocated (object)) then
