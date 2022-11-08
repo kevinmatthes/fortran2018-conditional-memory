@@ -36,6 +36,11 @@
 A Fortran 2018 library for conditional (de-)allocation of allocatable objects of
 intrinsic types.
 
+1. [License](#license)
+2. [Software Requirements](#software-requirements)
+3. [Description](#description)
+4. [Build](#build)
+
 ## License
 
 This project's license is **GPL-2.0** (as of June 1991).  The whole license text
@@ -97,5 +102,9 @@ Build artifacts are prevented from begin committed by the `.gitignore` this
 repository contains.  It furthermore controls which files are going to be
 removed by `git clean`.  Thus, it is the simplest solution to employ **Git** for
 the removal of build artifacts.
+
+## Description
+
+## Build
 
 <!----------------------------------------------------------------------------->
