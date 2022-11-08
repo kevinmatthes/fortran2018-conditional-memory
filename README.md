@@ -75,6 +75,7 @@ version is as follows:
 | Latexmk           | application   | LaTeX compilation of Doxygen manual   |
 | Scriv             | Python CLI    | changelog management                  |
 | TeX Live (full)   | package       | LaTeX environment for Doxygen manual  |
+| Valgrind          | application   | memory leak detection                 |
 
 This library is written in Fortran 2018 such that its build requires a compiler
 supporting this standard.  This project relies on **GFortran** therefore.
@@ -93,6 +94,10 @@ are listed in the following.
 In order to finalise the LaTeX documentation, an appropriate LaTeX distribution
 is required.  A *full* installation of **TeX Live** is recommended.  This
 project employs **Latexmk** as LaTeX build manager for the manual finalisation.
+
+There are unit tests for the library logic written in plain Fortran 2018 without
+requiring any further libraries.  When running the tests, **Valgrind** will
+analyse their memory management.
 
 In order to simplify the maintenance, **bump2version** as well as **Scriv** are
 used to automate the release generation.  Scriv will compile the changelog on
