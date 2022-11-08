@@ -113,10 +113,10 @@ Fortran 2018.
 As the deallocation of an allocatable object which is not already allocated will
 result in a runtime error, it needs to be checked whether the object to
 deallocate is allocated at all.  The deallocation subroutines this library
-provides will take care about this check.  All those subroutines are exposed
-with the generic interface `cnddel` which is an abbreviation of
-"***C***o***nd***itional ***De***a***l***location".  At the moment, the
-following types are supported:
+provides will take care about both this check and the deallocation, if required.
+All those subroutines are exposed with the generic interface `cnddel` which is
+an abbreviation of "***C***o***nd***itional ***De***a***l***location".  At the
+moment, the following types are supported:
 
 * `character` (default)
 
