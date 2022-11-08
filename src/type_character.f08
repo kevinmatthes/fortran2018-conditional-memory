@@ -39,7 +39,7 @@
 !!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-submodule (libcndmem) type_character
+submodule (libf18cndmem) type_character
 implicit none
 contains
     include 'type_character/cndall_character.f08'

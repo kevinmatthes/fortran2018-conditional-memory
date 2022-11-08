@@ -43,7 +43,7 @@
 !!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-module libcndmem
+module libf18cndmem
 implicit none
 private
     !> This library's version.
@@ -66,6 +66,6 @@ private
             character (:), allocatable, intent (inout)  :: tgt
         end subroutine cnddel_character
     end interface cnddel
-end module libcndmem
+end module libf18cndmem
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
