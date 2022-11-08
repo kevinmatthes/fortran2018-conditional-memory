@@ -107,4 +107,32 @@ the removal of build artifacts.
 
 ## Build
 
+The build routine is organised by Just and defined in the `.justfile` in the
+repository root.  To build the library, one of the following instructions can
+be executed.
+
+```bash
+just b
+just build
+just l
+just library
+```
+
+In addition, an automatic source code documentation with Doxygen is configured.
+One of the following commands will invoke the compilation.
+
+```bash
+just d
+just doxygen
+```
+
+If the compilation of both the library and its documentation is wished, the
+following instructions can be executed.
+
+```bash
+just
+just a
+just all
+```
+
 <!----------------------------------------------------------------------------->
