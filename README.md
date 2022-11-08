@@ -115,22 +115,22 @@ result in a runtime error, it needs to be checked whether the object to
 deallocate is allocated at all.  The deallocation subroutines this library
 provides will take care about this check.  All those subroutines are exposed
 with the generic interface `cnddel` which is an abbreviation of
-"**C**o**nd**itional **De**a**l**location".  At the moment, the following types
-are supported:
+"***C***o***nd***itional ***De***a***l***location".  At the moment, the
+following types are supported:
 
 * `character` (default)
 
 Fortran 2018 has automatic reallocation features which allow for a convenient
 and comprehensive coding style.  Under certain circumstances, it might not be
 obvious if an allocatable object is already allocated such that the automatic
-reallocation on intrinsic assignment can be processed.  Then, it need to be
+reallocation on intrinsic assignment could be processed.  Then, it need to be
 tested whether there is already a memory region allocated for the respective
 object.  If not so, an according amount of memory needs to be allocated before
 the assignment can be performed.  This library provides a counterpart to the
 conditional deallocation, named `cndall`, to check whether some memory was
 already allocated and to assign the intended object to the target object.  The
-name `cndall` is an abbreviation of "**C**o**nd**itional **All**ocation".  At
-the moment, the following types are supported:
+name `cndall` is an abbreviation of "***C***o***nd***itional ***All***ocation".
+At the moment, the following types are supported:
 
 * `character` (default)
 
