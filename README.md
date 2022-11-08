@@ -36,6 +36,11 @@
 A Fortran 2018 library for conditional (de-)allocation of allocatable objects of
 intrinsic types.
 
+1. [License](#license)
+2. [Software Requirements](#software-requirements)
+3. [Description](#description)
+4. [Build](#build)
+
 ## License
 
 This project's license is **GPL-2.0** (as of June 1991).  The whole license text
@@ -97,5 +102,66 @@ Build artifacts are prevented from begin committed by the `.gitignore` this
 repository contains.  It furthermore controls which files are going to be
 removed by `git clean`.  Thus, it is the simplest solution to employ **Git** for
 the removal of build artifacts.
+
+## Description
+
+This repository provides the source code for a library named `libf18cndmem.a`.
+The purpose of this library is the conditional allocation and deallocation of
+allocatable objects of Fortran intrinsic types.  It is written in Free Form
+Fortran 2018.
+
+As the deallocation of an allocatable object which is not already allocated will
+result in a runtime error, it needs to be checked whether the object to
+deallocate is allocated at all.  The deallocation subroutines this library
+provides will take care about both this check and the deallocation, if required.
+All those subroutines are exposed with the generic interface `cnddel` which is
+an abbreviation of "***C***o***nd***itional ***De***a***l***location".  At the
+moment, the following types are supported:
+
+* `character` (default)
+
+Fortran 2018 has automatic reallocation features which allow for a convenient
+and comprehensive coding style.  Under certain circumstances, it might not be
+obvious if an allocatable object is already allocated such that the automatic
+reallocation on intrinsic assignment could be processed.  Then, it need to be
+tested whether there is already a memory region allocated for the respective
+object.  If not so, an according amount of memory needs to be allocated before
+the assignment can be performed.  This library provides a counterpart to the
+conditional deallocation, named `cndall`, to check whether some memory was
+already allocated and to assign the intended object to the target object.  The
+name `cndall` is an abbreviation of "***C***o***nd***itional ***All***ocation".
+At the moment, the following types are supported:
+
+* `character` (default)
+
+## Build
+
+The build routine is organised by Just and defined in the `.justfile` in the
+repository root.  To build the library, one of the following instructions can
+be executed.
+
+```bash
+just b
+just build
+just l
+just library
+```
+
+In addition, an automatic source code documentation with Doxygen is configured.
+One of the following commands will invoke the compilation.
+
+```bash
+just d
+just doxygen
+```
+
+If the compilation of both the library and its documentation is wished, the
+following instructions can be executed.
+
+```bash
+just
+just a
+just all
+```
 
 <!----------------------------------------------------------------------------->
