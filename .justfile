@@ -57,7 +57,7 @@ f18-lib := f18 + ' ' + lib + ' ' + flags
 lnk-f18 := '-I. ' + lflags
 
 # Targets.
-library := 'libcndmem.a'
+library := 'libf18cndmem.a'
 
 # Valgrind settings.
 vflags  := '--leak-check=full --redzone-size=512 --show-leak-kinds=all'
