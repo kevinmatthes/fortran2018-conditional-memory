@@ -120,6 +120,8 @@ are supported:
 
 * `character` (default)
 
+* `character` (default)
+
 ## Build
 
 The build routine is organised by Just and defined in the `.justfile` in the
