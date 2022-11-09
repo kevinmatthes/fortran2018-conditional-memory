@@ -35,8 +35,8 @@ name: bump2version
 on:
   pull_request:
   push:
-    branches:
-      - main
+    #branches:
+      #- main
 
 permissions:
   contents: read
@@ -53,6 +53,10 @@ jobs:
 
       - name: dependencies
         run: python3 -m pip install -r requirements.txt
+
+      - run: bump2version --help
+      - run: scriv --version
+      - run: cffconvert --version
 
       - name: just
         uses: extractions/setup-just@v1.5.0
