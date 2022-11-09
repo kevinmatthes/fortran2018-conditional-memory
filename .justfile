@@ -31,13 +31,13 @@
 ################################################################################
 
 # Synonyms for the configured recipes.
-alias a         := all
-alias b         := library
-alias build     := library
-alias clr       := clear
-alias d         := doxygen
-alias l         := library
-alias v         := valgrind
+alias a     := all
+alias b     := library
+alias build := library
+alias clr   := clear
+alias d     := doxygen
+alias l     := library
+alias v     := valgrind
 
 
 
@@ -127,5 +127,14 @@ vflags  := '--leak-check=full --redzone-size=512 --show-leak-kinds=all'
 @valgrind:
     just test character
     just test library_version
+
+# Test whether the automatic version increment is still possible.
+@versions:
+    just major
+    git checkout .
+    just minor
+    git checkout .
+    just patch
+    git checkout .
 
 ################################################################################
