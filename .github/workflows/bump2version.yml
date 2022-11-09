@@ -35,8 +35,8 @@ name: bump2version
 on:
   pull_request:
   push:
-    #branches:
-      #- main
+    branches:
+      - main
 
 permissions:
   contents: read
@@ -50,5 +50,19 @@ jobs:
         uses: actions/setup-python@v4.3.0
         with:
           python-version: 3.9
+
+      - name: dependencies
+        run: python3 -m pip install -r requirements.txt
+
+      - name: just
+        uses: extractions/setup-just@v1.5.0
+
+      - name: checkout
+        uses: actions/checkout@v3.1.0
+        with:
+          persist-credentials: false
+
+      - name: bump2version
+        run: just versions
 
 ################################################################################
