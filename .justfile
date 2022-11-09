@@ -59,7 +59,11 @@ lnk-f18 := '-I. ' + lflags
 library := 'libf18cndmem.a'
 
 # Valgrind settings.
-vflags  := '--leak-check=full --redzone-size=512 --show-leak-kinds=all'
+vall    := '--show-leak-kinds=all'
+verror  := '--error-exitcode=42'
+vfull   := '--leak-check=full'
+vred    := '--redzone-size=512'
+vflags  := verror + ' ' + vfull + ' ' + vred + ' ' + vall
 
 
 
