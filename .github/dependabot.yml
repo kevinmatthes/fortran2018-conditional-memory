@@ -56,4 +56,16 @@ updates:
       include: scope
     milestone: 1
 
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: daily
+      time: '00:00'
+    assignees:
+      - kevinmatthes
+    commit-message:
+      prefix: Dependabot
+      include: scope
+    milestone: 1
+
 ################################################################################
