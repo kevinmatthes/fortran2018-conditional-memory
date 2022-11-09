@@ -33,6 +33,7 @@
 
 ## Summary
 
+[![](https://github.com/kevinmatthes/fortran2018-conditional-memory/workflows/bump2version/badge.svg)](https://github.com/kevinmatthes/fortran2018-conditional-memory/workflows/bump2version)
 [![](https://github.com/kevinmatthes/fortran2018-conditional-memory/workflows/cffconvert/badge.svg)](https://github.com/kevinmatthes/fortran2018-conditional-memory/workflows/cffconvert)
 [![](https://github.com/kevinmatthes/fortran2018-conditional-memory/workflows/valgrind/badge.svg)](https://github.com/kevinmatthes/fortran2018-conditional-memory/workflows/valgrind)
 
