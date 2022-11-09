@@ -49,6 +49,6 @@ jobs:
       - name: python
         uses: actions/setup-python@v4.3.0
         with:
-          persist-credentials: false
+          python-version: 3.9
 
 ################################################################################
