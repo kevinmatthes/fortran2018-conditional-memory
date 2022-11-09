@@ -51,9 +51,6 @@ jobs:
         with:
           python-version: 3.9
 
-      - name: update
-        run: python3 -m pip install --upgrade pip
-
       - name: checkout
         uses: actions/checkout@v3.1.0
         with:
@@ -61,10 +58,6 @@ jobs:
 
       - name: dependencies
         run: python3 -m pip install -r requirements.txt
-
-      - run: bump2version --help
-      - run: scriv --version
-      - run: cffconvert --version
 
       - name: just
         uses: extractions/setup-just@v1.5.0
