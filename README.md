@@ -34,7 +34,6 @@
 ## Summary
 
 [![](https://github.com/kevinmatthes/fortran2018-conditional-memory/workflows/cffconvert/badge.svg)](https://github.com/kevinmatthes/fortran2018-conditional-memory/workflows/cffconvert)
-[![](https://img.shields.io/github/license/kevinmatthes/fortran2018-conditional-memory)](https://github.com/kevinmatthes/fortran2018-conditional-memory)
 [![](https://github.com/kevinmatthes/fortran2018-conditional-memory/workflows/valgrind/badge.svg)](https://github.com/kevinmatthes/fortran2018-conditional-memory/workflows/valgrind)
 
 A Fortran 2018 library for conditional (de-)allocation of allocatable objects of
@@ -46,6 +45,8 @@ intrinsic types.
 4. [Build](#build)
 
 ## License
+
+[![](https://img.shields.io/github/license/kevinmatthes/fortran2018-conditional-memory)](https://github.com/kevinmatthes/fortran2018-conditional-memory)
 
 This project's license is **GPL-2.0** (as of June 1991).  The whole license text
 can be found in `LICENSE` in the main directory of this repository.  The brief
