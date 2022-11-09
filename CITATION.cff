@@ -51,4 +51,63 @@ repository-code: https://github.com/kevinmatthes/fortran2018-conditional-memory
 title: fortran2018-conditional-memory
 url: https://github.com/kevinmatthes/fortran2018-conditional-memory
 
+# References.
+references:
+  - authors:
+      - family-names: Chivers
+        given-names: Ian
+      - family-names: Sleightholme
+        given-names: Jane
+    doi: 10.1007/978-3-319-75502-1
+    edition: '4'
+    isbn: 978-3-030-09248-1
+    languages:
+      - en
+    pages: 956
+    publisher:
+      city: Cham
+      country: CH
+      name: Springer
+    title: Introduction to Programming with Fortran
+    type: book
+    year: 2018
+  - authors:
+      - family-names: Kühme
+        given-names: Thomas
+      - family-names: Witschital
+        given-names: Peter
+    edition: '3'
+    isbn: 978-3-486-22016-2
+    languages:
+      - de
+    pages: 248
+    publisher:
+      city: Munich
+      country: DE
+      name: Oldenbourg
+    title: Die FORTRAN-Fibel
+    type: book
+    year: 1991
+  - abstract: Incorporating Fortran 2018
+    authors:
+      - family-names: Metcalf
+        given-names: Michael
+      - family-names: Reid
+        given-names: John
+      - family-names: Cohen
+        given-names: Malcolm
+    doi: 10.1093/oso/9780198811886.001.0001
+    edition: '2'
+    isbn: 978-0-19-881188-6
+    languages:
+      - en
+    pages: 522
+    publisher:
+      city: Oxford
+      country: GB
+      name: Oxford University Press
+    title: Modern Fortran Explained
+    type: book
+    year: 2018
+
 ################################################################################
