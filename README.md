@@ -33,9 +33,6 @@
 
 ## Summary
 
-[![](https://github.com/kevinmatthes/fortran2018-conditional-memory/workflows/cffconvert/badge.svg)](https://github.com/kevinmatthes/fortran2018-conditional-memory/workflows/cffconvert)
-[![](https://github.com/kevinmatthes/fortran2018-conditional-memory/workflows/valgrind/badge.svg)](https://github.com/kevinmatthes/fortran2018-conditional-memory/workflows/valgrind)
-
 A Fortran 2018 library for conditional (de-)allocation of allocatable objects of
 intrinsic types.
 
