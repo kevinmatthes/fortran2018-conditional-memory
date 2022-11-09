@@ -38,8 +38,6 @@ alias clr       := clear
 alias d         := doxygen
 alias l         := library
 alias v         := valgrind
-alias ver       := bump
-alias version   := bump
 
 
 
@@ -107,6 +105,18 @@ vflags  := '--leak-check=full --redzone-size=512 --show-leak-kinds=all'
 # Compile the target library.
 @library: character
 
+# Increment the major version.
+@major:
+    just bump major
+
+# Increment the minor version.
+@minor:
+    just bump minor
+
+# Increment the patch level.
+@patch:
+    just bump patch
+
 # Compile and run a single unit test.
 @test name: directories library
     gfortran {{f18-exe}} tests/test_{{name}}.f08 -o \
@@ -116,5 +126,6 @@ vflags  := '--leak-check=full --redzone-size=512 --show-leak-kinds=all'
 # Analyse the memory management of the unit tests.
 @valgrind:
     just test character
+    just test library_version
 
 ################################################################################
