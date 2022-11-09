@@ -126,5 +126,6 @@ vflags  := '--leak-check=full --redzone-size=512 --show-leak-kinds=all'
 # Analyse the memory management of the unit tests.
 @valgrind:
     just test character
+    just test library_version
 
 ################################################################################
