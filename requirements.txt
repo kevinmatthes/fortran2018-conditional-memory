@@ -21,51 +21,19 @@
 ################################################################################
 ##
 ##  AUTHOR      Kevin Matthes
-##  BRIEF       The configuration of Dependabot.
+##  BRIEF       The Python 3 software requirements of this project.
 ##  COPYRIGHT   GPL-2.0
 ##  DATE        2022
-##  FILE        dependabot.yml
+##  FILE        requirements.txt
 ##  NOTE        See `LICENSE' for full license.
 ##              See `README.md' for project details.
 ##
 ################################################################################
 
-version: 2
-updates:
-  - package-ecosystem: github-actions
-    directory: /
-    schedule:
-      interval: daily
-      time: '00:00'
-    assignees:
-      - kevinmatthes
-    commit-message:
-      prefix: Dependabot
-      include: scope
-    milestone: 1
+# Automatic version increments.
+bump2version == 1.0.1
 
-  - package-ecosystem: gitsubmodule
-    directory: /
-    schedule:
-      interval: daily
-      time: '00:00'
-    assignees:
-      - kevinmatthes
-    commit-message:
-      prefix: Dependabot
-      include: scope
-    milestone: 1
-
-  - package-ecosystem: pip
-    directory: /
-    schedule:
-      interval: daily
-      time: '00:00'
-    assignees:
-      - kevinmatthes
-    commit-message:
-      prefix: Dependabot
-      include: scope
-    milestone: 1
+# CHANGELOG assembly.
+scriv == 0.17.0
 
 ################################################################################

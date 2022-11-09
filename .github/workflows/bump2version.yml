@@ -21,51 +21,48 @@
 ################################################################################
 ##
 ##  AUTHOR      Kevin Matthes
-##  BRIEF       The configuration of Dependabot.
+##  BRIEF       The definition of a GitHub Action.
 ##  COPYRIGHT   GPL-2.0
 ##  DATE        2022
-##  FILE        dependabot.yml
+##  FILE        bump2version.yml
 ##  NOTE        See `LICENSE' for full license.
 ##              See `README.md' for project details.
 ##
 ################################################################################
 
-version: 2
-updates:
-  - package-ecosystem: github-actions
-    directory: /
-    schedule:
-      interval: daily
-      time: '00:00'
-    assignees:
-      - kevinmatthes
-    commit-message:
-      prefix: Dependabot
-      include: scope
-    milestone: 1
+name: bump2version
 
-  - package-ecosystem: gitsubmodule
-    directory: /
-    schedule:
-      interval: daily
-      time: '00:00'
-    assignees:
-      - kevinmatthes
-    commit-message:
-      prefix: Dependabot
-      include: scope
-    milestone: 1
+on:
+  pull_request:
+  push:
+    branches:
+      - main
 
-  - package-ecosystem: pip
-    directory: /
-    schedule:
-      interval: daily
-      time: '00:00'
-    assignees:
-      - kevinmatthes
-    commit-message:
-      prefix: Dependabot
-      include: scope
-    milestone: 1
+permissions:
+  contents: read
+
+jobs:
+  try:
+    name: increment
+    runs-on: ubuntu-latest
+    steps:
+      - name: python
+        uses: actions/setup-python@v4.3.0
+        with:
+          python-version: 3.9
+
+      - name: checkout
+        uses: actions/checkout@v3.1.0
+        with:
+          persist-credentials: false
+
+      - name: dependencies
+        run: python3 -m pip install -r requirements.txt
+
+      - name: just
+        uses: extractions/setup-just@v1.5.0
+
+      - name: bump2version
+        run: just versions
 
 ################################################################################
