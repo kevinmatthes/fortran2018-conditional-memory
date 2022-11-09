@@ -42,8 +42,8 @@ permissions:
   contents: read
 
 jobs:
-  valgrind:
-    name: valgrind
+  memcheck:
+    name: test
     runs-on: ubuntu-latest
     steps:
       - name: dependencies
