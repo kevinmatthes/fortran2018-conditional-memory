@@ -1,0 +1,77 @@
+######################## GNU General Public License 2.0 ########################
+##                                                                            ##
+## Copyright (C) 2022 Kevin Matthes                                           ##
+##                                                                            ##
+## This program is free software; you can redistribute it and/or modify       ##
+## it under the terms of the GNU General Public License as published by       ##
+## the Free Software Foundation; either version 2 of the License, or          ##
+## (at your option) any later version.                                        ##
+##                                                                            ##
+## This program is distributed in the hope that it will be useful,            ##
+## but WITHOUT ANY WARRANTY; without even the implied warranty of             ##
+## MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the              ##
+## GNU General Public License for more details.                               ##
+##                                                                            ##
+## You should have received a copy of the GNU General Public License along    ##
+## with this program; if not, write to the Free Software Foundation, Inc.,    ##
+## 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.                ##
+##                                                                            ##
+################################################################################
+
+################################################################################
+##
+##  AUTHOR      Kevin Matthes
+##  BRIEF       The definition of a GitHub Issue Template.
+##  COPYRIGHT   GPL-2.0
+##  DATE        2022
+##  FILE        bug.yml
+##  NOTE        See `LICENSE' for full license.
+##              See `README.md' for project details.
+##
+################################################################################
+
+name: 'Bug Report'
+description: Outline a bug.
+title: '[Bug] New Bug'
+labels:
+  - 'bug'
+assignees:
+  - kevinmatthes
+body:
+  - type: markdown
+    attributes:
+      value: With this issue, a new bug is reported.
+  - type: dropdown
+    attributes:
+      label: Version
+      description: |
+        Please specify the version of the library in which the bug occurred.
+      options:
+        - Nightly
+        - v0.0.1
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: Category
+      description: |
+        Please choose the category which describes best the bug to be reported.
+      options:
+        - Major — The library does not fulfill the task it is designed for.
+        - Minor — The library basically does what it should do but there might
+          be improvements.
+        - Typo — There is a spelling mistake or something similar.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Detailed Description
+      description: |
+        Please describe the bug in detail.  This is only required if the issue
+        title is not alredy descriptive enough.  In any case, further details
+        may be given by additional comments on this issue after its creation.
+      placeholder: Detailed description of the bug
+    validations:
+      required: false
+
+################################################################################
