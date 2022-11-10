@@ -30,11 +30,11 @@
 ##
 ################################################################################
 
-name: 'Bug Report'
+name: Bug Report
 description: Outline a bug.
 title: '[Bug] New Bug'
 labels:
-  - 'bug'
+  - bug
 assignees:
   - kevinmatthes
 body:
