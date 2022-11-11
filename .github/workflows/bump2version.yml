@@ -51,13 +51,13 @@ jobs:
         with:
           python-version: 3.9
 
+      - name: dependencies
+        uses: py-actions/py-dependency-install@v4.0.0
+
       - name: checkout
         uses: actions/checkout@v3.1.0
         with:
           persist-credentials: false
-
-      - name: dependencies
-        uses: py-actions/py-dependency-install@v4.0.0
 
       - name: just
         uses: extractions/setup-just@v1.5.0
