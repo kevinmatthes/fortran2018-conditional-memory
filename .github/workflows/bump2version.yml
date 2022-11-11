@@ -57,7 +57,7 @@ jobs:
           persist-credentials: false
 
       - name: dependencies
-        run: python3 -m pip install -r requirements.txt
+        uses: py-actions/py-dependency-install@v4.0.0
 
       - name: just
         uses: extractions/setup-just@v1.5.0
