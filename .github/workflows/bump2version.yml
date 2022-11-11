@@ -46,21 +46,21 @@ jobs:
     name: increment
     runs-on: ubuntu-latest
     steps:
+      - name: just
+        uses: extractions/setup-just@v1.5.0
+
       - name: python
         uses: actions/setup-python@v4.3.0
         with:
           python-version: 3.9
-
-      - name: dependencies
-        uses: py-actions/py-dependency-install@v4.0.0
 
       - name: checkout
         uses: actions/checkout@v3.1.0
         with:
           persist-credentials: false
 
-      - name: just
-        uses: extractions/setup-just@v1.5.0
+      - name: dependencies
+        uses: py-actions/py-dependency-install@v4.0.0
 
       - name: bump2version
         run: just versions
