@@ -34,8 +34,8 @@ cff-version: 1.2.0
 message: Please cite this library using these meta data.
 
 # Version information.
-date-released: 2022-11-09
-version: 0.0.0
+date-released: 2022-11-14
+version: 0.0.1
 
 # Project information.
 abstract: >-
