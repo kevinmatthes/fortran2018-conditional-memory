@@ -38,14 +38,14 @@
 !> This unit test will check whether this library's version number
 !>
 !> * can be imported.
-!> * equals 'v0.0.1'.
+!> * equals 'v0.0.0'.
 !!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 program test_library_version
     use, non_intrinsic :: libf18cndmem, only: library_version
 implicit none
-    character (*), parameter :: expectation = 'v0.0.1'
+    character (*), parameter :: expectation = 'v0.0.0'
 
     if (library_version /= expectation) then
         error stop 'The library version string has an unexpected value!'
