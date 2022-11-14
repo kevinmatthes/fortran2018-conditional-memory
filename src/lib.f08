@@ -47,7 +47,7 @@ module libf18cndmem
 implicit none
 private
     !> This library's version.
-    character (*), parameter, public    :: library_version = 'v0.0.1'
+    character (*), parameter, public    :: library_version = 'v0.0.0'
 
     public  :: cndall
     public  :: cnddel
