@@ -1,10 +1,10 @@
-.. --------------------- GNU General Public License 2.0 --------------------- ..
+.. --------------------- GNU General Public License 3.0 --------------------- ..
 ..                                                                            ..
 .. Copyright (C) 2022 Kevin Matthes                                           ..
 ..                                                                            ..
-.. This program is free software; you can redistribute it and/or modify       ..
+.. This program is free software: you can redistribute it and/or modify       ..
 .. it under the terms of the GNU General Public License as published by       ..
-.. the Free Software Foundation; either version 2 of the License, or          ..
+.. the Free Software Foundation, either version 3 of the License, or          ..
 .. (at your option) any later version.                                        ..
 ..                                                                            ..
 .. This program is distributed in the hope that it will be useful,            ..
@@ -12,9 +12,8 @@
 .. MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the              ..
 .. GNU General Public License for more details.                               ..
 ..                                                                            ..
-.. You should have received a copy of the GNU General Public License along    ..
-.. with this program; if not, write to the Free Software Foundation, Inc.,    ..
-.. 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.                ..
+.. You should have received a copy of the GNU General Public License          ..
+.. along with this program.  If not, see <https://www.gnu.org/licenses/>.     ..
 ..                                                                            ..
 .. -------------------------------------------------------------------------- ..
 
@@ -22,7 +21,7 @@
 ..
 ..  AUTHOR      Kevin Matthes
 ..  BRIEF       The development history of this project.
-..  COPYRIGHT   GPL-2.0
+..  COPYRIGHT   GPL-3.0
 ..  DATE        2022
 ..  FILE        CHANGELOG.rst
 ..  NOTE        See `LICENSE' for full license.
@@ -50,70 +49,5 @@ Unreleased
 All pending changelog entries are stored in `changelog.d`_.
 
 .. scriv-insert-here
-
-.. _changelog-0.0.1:
-
-0.0.1 — 2022-11-09
-------------------
-
-Added
-.....
-
-- bump2version settings
-
-- create CITATION.cff
-
-- Dependabot:  GitHub Action setup
-
-- GitHub Action:  CFF validation
-
-- define library utility subroutine for conditional allocation and assignment
-  of an allocatable object of type standard ``character``
-
-- define library utility subroutine for conditional deallocation of an
-  allocatable object of type standard ``character``
-
-- define submodule for procedures associated with the standard ``character``
-  intrinsic type
-
-- Dependabot:  pip setup
-
-- GitHub Action:  version increment check
-
-- GitHub Action:  unit tests
-
-- create ``.gitmodules``
-
-- Dependabot:  Git submodule setup
-
-- submodule:  literature
-
-- build routine:  Just
-
-- create this CHANGELOG
-
-- create Scriv artifact storage
-
-- Scriv settings
-
-- create ``.gitignore``
-
-- create library source file
-
-- Doxygen:  Fortran setup
-
-- Latexmk settings
-
-- unit test:  conditional allocation (type ``character``, default)
-
-- unit test:  conditional deallocation (type ``character``, default)
-
-- unit test:  library version
-
-- create repository README
-
-- create this repository
-
-- license:  GPL-2.0
 
 .. -------------------------------------------------------------------------- ..
