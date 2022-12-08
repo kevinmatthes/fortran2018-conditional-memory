@@ -20,37 +20,20 @@
 ################################################################################
 ##
 ##  AUTHOR      Kevin Matthes
-##  BRIEF       Ensure the validity of this repository's CFF files.
+##  BRIEF       Settings for Bors.
 ##  COPYRIGHT   GPL-3.0
 ##  DATE        2022
-##  FILE        cffconvert.yml
+##  FILE        bors.toml
 ##  NOTE        See `LICENSE' for full license.
 ##              See `README.md' for project details.
 ##
 ################################################################################
 
-name: cffconvert
+# The CI steps to watch for.
+status = ["bump2version", "cffconvert", "valgrind"]
 
-on:
-  pull_request:
-  push:
-
-permissions:
-  contents: read
-
-jobs:
-  cffconvert:
-    name: cffconvert
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout
-        uses: actions/checkout@v3.1.0
-        with:
-          persist-credentials: false
-
-      - name: cffconvert
-        uses: citation-file-format/cffconvert-github-action@2.0.0
-        with:
-          args: --validate
+# Settings for the merging strategy.
+delete_merged_branches = true
+use_squash_merge       = true
 
 ################################################################################

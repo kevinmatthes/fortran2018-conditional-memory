@@ -20,7 +20,7 @@
 ################################################################################
 ##
 ##  AUTHOR      Kevin Matthes
-##  BRIEF       The definition of a GitHub Action.
+##  BRIEF       Run the Valgrind memory management analysis.
 ##  COPYRIGHT   GPL-3.0
 ##  DATE        2022
 ##  FILE        valgrind.yml
@@ -36,13 +36,15 @@ on:
   push:
     branches:
       - main
+      - staging
+      - trying
 
 permissions:
   contents: read
 
 jobs:
-  memcheck:
-    name: test
+  valgrind:
+    name: valgrind
     runs-on: ubuntu-latest
     steps:
       - name: dependencies
