@@ -3,17 +3,15 @@ Added
 
 - settings for Bors
 
-- Bors badge to README
-
 Changed
 .......
 
+- adjust GitHub Action workflows to support Bors
+
 - adjust the descriptions of the GitHub Action workflows
 
-- rename some GitHub Action workflows
+- always run CFF validation
 
 - rename some GitHub Action workflow jobs
 
-- adjust GitHub Action workflows to support Bors
-
-- always run CFF validation
+- rename some GitHub Action workflows
