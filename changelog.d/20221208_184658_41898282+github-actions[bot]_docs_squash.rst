@@ -22,11 +22,13 @@
 ..
 .. - A bullet item for the Fixed category.
 ..
-.. Removed
-.. .......
-..
-.. - A bullet item for the Removed category.
-..
+Removed
+.......
+
+- software requirement:  bump2version
+
+- software requirement:  Scriv
+
 .. Security
 .. ........
 ..
