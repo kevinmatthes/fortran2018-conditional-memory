@@ -32,9 +32,11 @@
 
 ## Summary
 
+[![](https://bors.tech/images/badge_small.svg)](https://app.bors.tech/repositories/57832)
 [![](https://github.com/kevinmatthes/fortran2018-conditional-memory/workflows/bump2version/badge.svg)](https://github.com/kevinmatthes/fortran2018-conditional-memory/workflows/bump2version)
 [![](https://github.com/kevinmatthes/fortran2018-conditional-memory/workflows/cffconvert/badge.svg)](https://github.com/kevinmatthes/fortran2018-conditional-memory/workflows/cffconvert)
 [![](https://github.com/kevinmatthes/fortran2018-conditional-memory/workflows/valgrind/badge.svg)](https://github.com/kevinmatthes/fortran2018-conditional-memory/workflows/valgrind)
+[![](https://img.shields.io/github/license/kevinmatthes/fortran2018-conditional-memory)](https://github.com/kevinmatthes/fortran2018-conditional-memory)
 
 A Fortran 2018 library for conditional (de-)allocation of allocatable objects of
 intrinsic types.
