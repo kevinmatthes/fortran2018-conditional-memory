@@ -20,7 +20,7 @@
 ################################################################################
 ##
 ##  AUTHOR      Kevin Matthes
-##  BRIEF       The definition of a GitHub Action.
+##  BRIEF       Ensure the validity of this repository's CFF files.
 ##  COPYRIGHT   GPL-3.0
 ##  DATE        2022
 ##  FILE        cffconvert.yml
@@ -32,16 +32,15 @@
 name: cffconvert
 
 on:
+  pull_request:
   push:
-    paths:
-      - CITATION.cff
 
 permissions:
   contents: read
 
 jobs:
-  validation:
-    name: validate
+  cffconvert:
+    name: cffconvert
     runs-on: ubuntu-latest
     steps:
       - name: checkout
