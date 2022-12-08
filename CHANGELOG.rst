@@ -68,7 +68,7 @@ Added
 
 - Dependabot:  GitHub Action setup
 
-- GitHub Action:  CFF validation
+- GitHub Action workflow:  CFF validation
 
 - define library utility subroutine for conditional allocation and assignment
   of an allocatable object of type standard ``character``
@@ -81,9 +81,9 @@ Added
 
 - Dependabot:  pip setup
 
-- GitHub Action:  version increment check
+- GitHub Action workflow:  version increment check
 
-- GitHub Action:  unit tests
+- GitHub Action workflow:  unit tests
 
 - create ``.gitmodules``
 
