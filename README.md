@@ -73,13 +73,11 @@ follows:
 
 | Requirement       | Type          | Role                                  |
 |:------------------|:-------------:|:--------------------------------------|
-| bump2version      | Python CLI    | automatic version increment           |
 | Doxygen           | application   | source code documentation             |
 | GFortran          | application   | Fortran 2018 compiler                 |
 | Git               | application   | build artifact removal                |
 | Just              | Rust binary   | execution of the build instructions   |
 | Latexmk           | application   | LaTeX compilation of Doxygen manual   |
-| Scriv             | Python CLI    | changelog management                  |
 | TeX Live (full)   | package       | LaTeX environment for Doxygen manual  |
 | Valgrind          | application   | memory leak detection                 |
 
@@ -104,10 +102,6 @@ project employs **Latexmk** as LaTeX build manager for the manual finalisation.
 There are unit tests for the library logic written in plain Fortran 2018 without
 requiring any further libraries.  When running the tests, **Valgrind** will
 analyse their memory management.
-
-In order to simplify the maintenance, **bump2version** as well as **Scriv** are
-used to automate the release generation.  Scriv will compile the changelog on
-release after all version numbers were incremented by bump2version.
 
 Build artifacts are prevented from begin committed by the `.gitignore` this
 repository contains.  It furthermore controls which files are going to be
