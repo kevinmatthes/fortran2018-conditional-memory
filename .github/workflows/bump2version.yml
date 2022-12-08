@@ -20,7 +20,7 @@
 ################################################################################
 ##
 ##  AUTHOR      Kevin Matthes
-##  BRIEF       The definition of a GitHub Action.
+##  BRIEF       Check whether the bump2version increment is still possible.
 ##  COPYRIGHT   GPL-3.0
 ##  DATE        2022
 ##  FILE        bump2version.yml
@@ -36,13 +36,15 @@ on:
   push:
     branches:
       - main
+      - staging
+      - trying
 
 permissions:
   contents: read
 
 jobs:
-  try:
-    name: increment
+  bump2version:
+    name: bump2version
     runs-on: ubuntu-latest
     steps:
       - name: just
