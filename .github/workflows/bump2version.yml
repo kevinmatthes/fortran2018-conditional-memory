@@ -48,7 +48,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: just
-        uses: extractions/setup-just@v1.5.0
+        uses: extractions/setup-just@v1.6.0
 
       - name: python
         uses: actions/setup-python@v4.5.0
