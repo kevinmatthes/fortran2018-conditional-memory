@@ -51,7 +51,7 @@ jobs:
         run: sudo apt-get install valgrind -y
 
       - name: just
-        uses: extractions/setup-just@v1.5.0
+        uses: extractions/setup-just@v1.6.0
 
       - name: checkout
         uses: actions/checkout@v3.3.0
