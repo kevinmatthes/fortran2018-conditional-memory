@@ -56,7 +56,7 @@ jobs:
         uses: py-actions/py-dependency-install@v4.0.0
 
       - name: user
-        uses: fregante/setup-git-user@v1.1.0
+        uses: fregante/setup-git-user@v2.0.0
 
       - name: scriv
         run: scriv create --add && git commit -m 'Create fresh Scriv fragment'
