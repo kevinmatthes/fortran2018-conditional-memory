@@ -48,7 +48,7 @@ jobs:
           python-version: 3.9
 
       - name: checkout
-        uses: actions/checkout@v4.0.0
+        uses: actions/checkout@v4.1.0
         with:
           persist-credentials: false
 
