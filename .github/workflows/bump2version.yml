@@ -61,7 +61,7 @@ jobs:
           persist-credentials: false
 
       - name: dependencies
-        uses: py-actions/py-dependency-install@v4.0.0
+        uses: py-actions/py-dependency-install@v4.1.0
 
       - name: bump2version
         run: just versions
