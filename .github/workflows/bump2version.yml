@@ -51,7 +51,7 @@ jobs:
         uses: extractions/setup-just@v2.0.0
 
       - name: python
-        uses: actions/setup-python@v5.0.0
+        uses: actions/setup-python@v5.1.0
         with:
           python-version: 3.9
 
