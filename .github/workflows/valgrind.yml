@@ -54,7 +54,7 @@ jobs:
         uses: extractions/setup-just@v2.0.0
 
       - name: checkout
-        uses: actions/checkout@v4.1.6
+        uses: actions/checkout@v4.1.7
         with:
           persist-credentials: false
 
